@@ -1,0 +1,12 @@
+.App {
+	background-color: antiquewhite;
+	padding: 20px;
+}
+
+.runner,
+.header {
+	display: flex;
+	justify-content: space-between;
+	padding: 20px;
+	border: 2px solid black;
+}
