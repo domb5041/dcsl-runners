@@ -1,14 +1,20 @@
 import React from "react";
+import Aux from "./Aux";
 
 const Runner = props => {
 	return (
-		<div className="runner">
-			<button onClick={props.record}>{props.name}</button>
-			<p>{props.count}</p>
-			<p>{props.total}</p>
-			<p>{props.average}</p>
-			<p>{props.last}</p>
-		</div>
+		<Aux>
+			<div className="runnerCell">{props.name}</div>
+			<div className="runnerCell">{props.count}</div>
+			<div className="runnerCell">{props.total}</div>
+			<div className="runnerCell">{props.average}</div>
+			<div className="runnerCell">{props.last}</div>
+			<div className="runnerCell">
+				<button disabled={!props.timeRunning} onClick={props.record}>
+					Update
+				</button>
+			</div>
+		</Aux>
 	);
 };
 

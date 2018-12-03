@@ -3,11 +3,19 @@ import React from "react";
 const Timer = props => {
 	return (
 		<div className="timer">
-			<button onClick={props.start}>Start Race</button>
-			<button onClick={props.stop}>End Race</button>
-			<p>
-				{props.time} // {props.minutes}:{props.seconds}
-			</p>
+			<p>{props.cookedTime}</p>
+			<button disabled={props.timeRunning} onClick={props.start}>
+				Start
+			</button>
+			<button disabled={!props.timeRunning} onClick={props.stop}>
+				Stop
+			</button>
+			<button
+				disabled={props.timeRunning || props.time === 0}
+				onClick={props.reset}
+			>
+				Reset
+			</button>
 		</div>
 	);
 };

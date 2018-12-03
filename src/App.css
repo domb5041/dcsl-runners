@@ -1,12 +1,113 @@
+body {
+	background-color: rgb(189, 201, 176);
+}
+
 .App {
-	background-color: antiquewhite;
 	padding: 20px;
 }
 
-.runner,
-.header {
+.timer {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+@font-face {
+	font-family: "Digital-Dust";
+	src: local("Digital-Dust"), url(./digital.otf) format("woff");
+}
+
+.timer p {
+	font-size: 140px;
+	line-height: 0.8;
+	margin: 40px 0 40px 9px;
+	color: rgba(0, 0, 0, 0.5);
+	font-family: "Digital-Dust";
+}
+
+.timer button {
+	font-size: 15px;
+	width: 70px;
+	text-transform: uppercase;
+	border: none;
+	background-color: rgba(0, 0, 0, 0.5);
+	color: rgb(189, 201, 176);
+	cursor: pointer;
+}
+
+.timer button:nth-child(2) {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+
+.timer button:nth-child(4) {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.timer button:disabled {
+	background-color: rgba(0, 0, 0, 0.2);
+	cursor: default;
+}
+
+button:focus {
+	outline: none;
+}
+
+.runnerGrid {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+	border-left: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+.runnerCell {
+	border-top: solid rgba(0, 0, 0, 0.5) 2px;
+	border-right: solid rgba(0, 0, 0, 0.5) 2px;
+	color: rgba(0, 0, 0, 0.5);
+	height: 50px;
 	display: flex;
-	justify-content: space-between;
-	padding: 20px;
-	border: 2px solid black;
+	justify-content: center;
+	align-items: center;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.runnerCell button {
+	background: none;
+	border: none;
+	font-size: 14px;
+	text-decoration: underline;
+	cursor: pointer;
+	color: rgba(0, 0, 0, 0.5);
+	font-weight: bold;
+}
+
+.runnerCell button:disabled {
+	cursor: default;
+	color: rgba(0, 0, 0, 0.2);
+	text-decoration: none;
+}
+
+.runnerCell input {
+	border: none;
+	text-align: center;
+	font-size: 14px;
+	width: 100%;
+	background: none;
+	font-weight: bold;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+.runnerCell input:focus {
+	outline: none;
+}
+
+@media (max-width: 800px) {
+	.timer p {
+		font-size: 17.5vw;
+	}
+	.runnerGrid {
+		grid-template-columns: repeat(6, 126.33px);
+		overflow: scroll;
+	}
 }
